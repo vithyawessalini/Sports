@@ -1,0 +1,30 @@
+[
+    {
+      "id": 1,
+      "name": "Football Match",
+      "date": "2023-09-27",
+      "startTime": "10:00",
+      "endTime": "12:00",
+      "location": "Stadium A",
+      "category": "15-18"
+    },
+    {
+      "id": 2,
+      "name": "Basketball Game",
+      "date": "2023-09-28",
+      "startTime": "8:30",
+      "endTime": "10:30",
+      "location": "Arena B",
+      "category": "15-18"
+    },
+    {
+      "id": 3,
+      "name": "Soccer Tournament",
+      "date": "2023-09-29",
+      "startTime": "7:45",
+      "endTime": "10:00",
+      "location": "Sports Complex",
+      "category": "15-18"
+    }
+  ]
+  

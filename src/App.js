@@ -1,7 +1,6 @@
 import React from 'react';
 import './style.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-
 import Home from './pages/Home';
 import Events from './pages/Events';
 import Dash from './pages/Dash';
@@ -47,14 +46,11 @@ import Psign from './components/Psign';
 import Csign from './components/Csign';
 import EventRegistrationForm from './components/EventRegistrationForm';
 import VideoGallery from './components/Vgallery';
-
-
 function App() {
   return (
     <Router>
       <Routes>
       <Route path="/profile" element={<Profile />} />
-      
         <Route path="/home" element={<Home />} />
         <Route path="/dash" element={<Dash />} />
         <Route path="/adash" element={<Adash />} />
@@ -103,5 +99,4 @@ function App() {
     </Router>
   );
 }
-
 export default App;

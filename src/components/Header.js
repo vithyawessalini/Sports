@@ -2,10 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import '../style.css';
 import image from '../images/logo.png';
-import image5 from '../images/logout.png';
-
 function Header() {
-  
   return (
     <header className="header">
       <div className="logo">
@@ -20,5 +17,4 @@ function Header() {
     </header>
   );
 }
-
 export default Header;

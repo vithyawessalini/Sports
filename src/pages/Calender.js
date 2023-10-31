@@ -4,7 +4,7 @@ import moment from 'moment';
 import Sidebar from '../components/Cside';
 import Header from '../components/Header';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
-
+import {BASE_URL} from '../config';
 const localizer = momentLocalizer(moment, { culture: 'en', timezone: 'America/New_York' });
 
 const PracticeCalendar = () => {
@@ -13,11 +13,11 @@ const PracticeCalendar = () => {
   const [selectedEvent, setSelectedEvent] = useState(null);
 
   useEffect(() => {
-    fetch('/get-practise-events')
+    fetch(`${ BASE_URL }/get-practise-events`)
       .then((response) => response.json())
       .then((practiceEvents) => {
         // Fetch regular events from the server
-        fetch('/get-events')
+        fetch(`${ BASE_URL }/get-events`)
           .then((response) => response.json())
           .then((regularEvents) => {
             // Add a 'category' property to distinguish practice and regular events

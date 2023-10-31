@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate,Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import {BASE_URL} from '../config';
 const Adminlog = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -15,7 +16,7 @@ const Adminlog = () => {
     }
 
     try {
-      const response = await fetch('/adminlog', {
+      const response = await fetch(`${ BASE_URL }/adminlog`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -1,5 +1,4 @@
 import React from 'react';
-
 function CoachList({ coaches, selectedCoach, onRowClick }) {
   return (
     <div>

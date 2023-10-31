@@ -10,7 +10,7 @@ import {BASE_URL} from '../config';
     const [coaches, setCoaches] = useState([]);
     useEffect(() => {
       // Fetch coaches' data when the component mounts
-      fetch(`$(BASE_URL)/get-coaches`)
+      fetch(`${ BASE_URL }/get-coaches`)
         .then((response) => response.json())
         .then((data) => setCoaches(data))
         .catch((error) => console.error('Error fetching coaches:', error));

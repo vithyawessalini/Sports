@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faEdit } from '@fortawesome/free-solid-svg-icons';
 import EventList from '../components/Reventlist'; // Import the EventList component
 import Swal from 'sweetalert2';
+import {BASE_URL} from '../config';
 function Cevents() {
   const [events, setEvents] = useState([]);
   const [showForm, setShowForm] = useState(false);
@@ -44,7 +45,7 @@ function Cevents() {
     
 
     // Make a POST request to add the event to the database
-    fetch('/add-event', {
+    fetch(`${ BASE_URL }/add-event`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

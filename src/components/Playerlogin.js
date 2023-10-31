@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import {BASE_URL} from '../config';
 const Playerlog = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -16,7 +17,7 @@ const Playerlog = () => {
     }
 
     try {
-      const response = await fetch('/playerlog', {
+      const response = await fetch(`${ BASE_URL }/playerlog`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

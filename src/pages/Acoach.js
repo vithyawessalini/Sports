@@ -5,7 +5,7 @@ import Fhead from '../components/Header';
 import CoachForm from '../components/CoachForm';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
-
+import {BASE_URL} from '../config';
 const Acoach = () => {
   const [coaches, setCoaches] = useState([]);
   const [showAddForm, setShowAddForm] = useState(false);
@@ -13,7 +13,7 @@ const Acoach = () => {
 
   useEffect(() => {
     // Fetch coaches' data when the component mounts
-    fetch('/get-coaches')
+    fetch(`${ BASE_URL }/get-coaches`)
       .then((response) => response.json())
       .then((data) => setCoaches(data))
       .catch((error) => console.error('Error fetching coaches:', error));

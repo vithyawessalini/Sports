@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import {BASE_URL} from '../config';
 const Signup = () => {
   const containerStyle1 = {
     backgroundColor: '#9a616d',
@@ -97,7 +98,7 @@ const Signup = () => {
       Swal.fire('Please fill in all fields','','warning');
     } else {
       try {
-        const response = await fetch('/csign', {
+        const response = await fetch(`${ BASE_URL }/csign`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

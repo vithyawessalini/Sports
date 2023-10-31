@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Swal from 'sweetalert2';
+import {BASE_URL} from '../config';
 function EventRegistrationForm({ event, onClose }) {
   const [id, setId] = useState('');
   const [name, setName] = useState('');
@@ -10,7 +11,7 @@ function EventRegistrationForm({ event, onClose }) {
     e.preventDefault();
 
     try {
-      const response = await fetch('/register-for-event', {
+      const response = await fetch(`${ BASE_URL }/register-for-event`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

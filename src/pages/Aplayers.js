@@ -7,7 +7,7 @@ import { faPlus, faTrash } from '@fortawesome/free-solid-svg-icons'; // Import t
 import AddPlayerForm from '../components/AddPlayerForm';
 import Sidebar from '../components/Aside';
 import Header from '../components/Header';
-
+import {BASE_URL} from '../config';
 function Cplayer() {
   const [selectedPlayer, setSelectedPlayer] = useState(null);
   const [isAddingPlayer, setIsAddingPlayer] = useState(false);
@@ -60,7 +60,7 @@ function Cplayer() {
 
   const handleDeleteConfirm = () => {
     // Send a DELETE request to your server with playerToDeleteId
-    fetch(`/deletePlayer/${playerToDeleteId}`, {
+    fetch(`${ BASE_URL }/deletePlayer/${playerToDeleteId}`, {
       method: 'DELETE',
     })
       .then((response) => response.json())

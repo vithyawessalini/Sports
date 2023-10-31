@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Swal from 'sweetalert2';
+import {BASE_URL} from '../config';
 const CoachForm = () => {
   const [username, setUsername] = useState('');
   const [id, setId] = useState('');
@@ -40,7 +41,7 @@ const CoachForm = () => {
       Swal.fire('Please fill in all fields','','warning');
     } else {
       try {
-        const response = await fetch('/addcoach', {
+        const response = await fetch(`${ BASE_URL }/addcoach`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

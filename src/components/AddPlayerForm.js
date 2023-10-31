@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Swal from 'sweetalert2';
+import {BASE_URL} from '../config';
 function AddPlayerForm({ onAddPlayer, playerId, onClose }) {
   const [username, setUsername] = useState('');
   const [id, setId] = useState('');
@@ -28,7 +29,7 @@ function AddPlayerForm({ onAddPlayer, playerId, onClose }) {
       Swal.fire('Please fill in all fields','','warning');
     } else {
       try {
-        const response = await fetch('/addplayer', {
+        const response = await fetch(`${ BASE_URL }/addplayer`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

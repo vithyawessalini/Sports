@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import PlayerDetails from './Playerdetails'; // Import the PlayerDetails component
-
+import {BASE_URL} from '../config';
 function Playerlist() {
   const [players, setPlayers] = useState([]);
   const [selectedPlayer, setSelectedPlayer] = useState(null);
 
   useEffect(() => {
     // Fetch the list of players from your API
-    fetch('/playerslist') // Replace with your server's URL
+    fetch(`${ BASE_URL }/playerslist`) // Replace with your server's URL
       .then((response) => response.json())
       .then((data) => {
         console.log(data); // Add this line to log the fetched data

@@ -3,7 +3,7 @@ import Page from '../components/Page';
 import Sidebar from '../components/Aside';
 import Header from '../components/Header';
 import axios from 'axios';
-
+import {BASE_URL} from '../config';
 const Dash = () => {
   const [numberOfEvents, setNumberOfEvents] = useState(0);
   const [numberOfPlayers, setNumberOfPlayers] = useState(0);
@@ -11,7 +11,7 @@ const Dash = () => {
 
   useEffect(() => {
     // Make API requests to get counts
-    axios.get('/get-events')
+    axios.get(`${ BASE_URL }/get-events`)
       .then((response) => {
         setNumberOfEvents(response.data.length);
       })

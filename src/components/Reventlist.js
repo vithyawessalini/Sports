@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
-
+import {BASE_URL} from '../config';
 function EventList({ eventId, onClose }) {
   const [registeredPlayers, setRegisteredPlayers] = useState([]);
 
   useEffect(() => {
     // Fetch registered players for the event from the backend
-    fetch(`/get-registered-players?eventId=${eventId}`)
+    fetch(`${ BASE_URL }/get-registered-players?eventId=${eventId}`)
       .then((response) => response.json())
       .then((data) => {
         setRegisteredPlayers(data);

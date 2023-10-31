@@ -104,7 +104,7 @@ function Cevents() {
     };
 
     // Make a PUT request to update the event on the server
-    fetch(`/update-event/${editEventId}`, {
+    fetch(`${ BASE_URL }/update-event/${editEventId}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -181,7 +181,7 @@ function Cevents() {
 
   useEffect(() => {
     // Fetch events from the backend
-    fetch('/get-events')
+    fetch(`${ BASE_URL }/get-events`)
       .then((response) => response.json())
       .then((data) => {
         setEvents(data);

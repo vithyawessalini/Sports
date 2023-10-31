@@ -1,6 +1,6 @@
 import React,{useState,useEffect} from 'react';
 import { Link } from 'react-router-dom';
-
+import {BASE_URL} from '../config';
 const Sidebar = () => {
   const [user, setUser] = useState(null);
 
@@ -8,7 +8,7 @@ useEffect(() => {
   // Fetch user details from the server using the JWT token
   const token = localStorage.getItem('token');
   if (token) {
-    fetch('/getprofile', {
+    fetch(`${ BASE_URL }/getprofile`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },

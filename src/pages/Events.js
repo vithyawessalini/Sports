@@ -35,7 +35,7 @@ function Event() {
 
   useEffect(() => {
     // Fetch events from the backend
-    fetch('http://localhost:3000/get-events')
+    fetch('/get-events')
       .then((response) => response.json())
       .then((data) => {
         setEvents(data);

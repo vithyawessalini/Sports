@@ -23,7 +23,7 @@ const Practise = () => {
 
   const fetchPractiseEvents = async () => {
     try {
-      const response = await fetch('http://localhost:3000/get-practise-events');
+      const response = await fetch('/get-practise-events');
       if (response.ok) {
         const data = await response.json();
         setPractiseEvents(data);

@@ -13,11 +13,11 @@ const PracticeCalendar = () => {
   const [selectedEvent, setSelectedEvent] = useState(null);
 
   useEffect(() => {
-    fetch('http://localhost:3000/get-practise-events')
+    fetch('/get-practise-events')
       .then((response) => response.json())
       .then((practiceEvents) => {
         // Fetch regular events from the server
-        fetch('http://localhost:3000/get-events')
+        fetch('/get-events')
           .then((response) => response.json())
           .then((regularEvents) => {
             // Add a 'category' property to distinguish practice and regular events

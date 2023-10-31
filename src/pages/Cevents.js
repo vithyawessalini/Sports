@@ -60,7 +60,7 @@ function Cevents() {
     
 
     // Make a POST request to add the event to the database
-    fetch('http://localhost:3000/add-event', {
+    fetch('/add-event', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

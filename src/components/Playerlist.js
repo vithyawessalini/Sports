@@ -7,7 +7,7 @@ function Playerlist() {
 
   useEffect(() => {
     // Fetch the list of players from your API
-    fetch('http://localhost:3000/playerslist') // Replace with your server's URL
+    fetch('/playerslist') // Replace with your server's URL
       .then((response) => response.json())
       .then((data) => {
         console.log(data); // Add this line to log the fetched data

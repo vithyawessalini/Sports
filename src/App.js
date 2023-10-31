@@ -47,22 +47,13 @@ import Psign from './components/Psign';
 import Csign from './components/Csign';
 import EventRegistrationForm from './components/EventRegistrationForm';
 import VideoGallery from './components/Vgallery';
-const player1 = {
-  name: 'Player 1',
-  id: '1',
-  position: 'Forward',
-  class:'IX',
-  gameswon:'3',
-  gamesparticipated:'8',
-  team:'Football',
-  profilePictureUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOH2aZnIHWjMQj2lQUOWIL2f4Hljgab0ecZQ&usqp=CAU', // Replace with the actual URL
-};
+
 
 function App() {
   return (
     <Router>
       <Routes>
-      <Route path="/profile" element={<Profile playerData={player1} />} />
+      <Route path="/profile" element={<Profile />} />
       
         <Route path="/home" element={<Home />} />
         <Route path="/dash" element={<Dash />} />

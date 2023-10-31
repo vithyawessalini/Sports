@@ -5,7 +5,7 @@ function EventList({ eventId, onClose }) {
 
   useEffect(() => {
     // Fetch registered players for the event from the backend
-    fetch(`http://localhost:3000/get-registered-players?eventId=${eventId}`)
+    fetch(`/get-registered-players?eventId=${eventId}`)
       .then((response) => response.json())
       .then((data) => {
         setRegisteredPlayers(data);

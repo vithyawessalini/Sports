@@ -44,7 +44,7 @@ function Cevents() {
     
 
     // Make a POST request to add the event to the database
-    fetch('http://localhost:3000/add-event', {
+    fetch('/add-event', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -103,7 +103,7 @@ function Cevents() {
     };
 
     // Make a PUT request to update the event on the server
-    fetch(`http://localhost:3000/update-event/${editEventId}`, {
+    fetch(`/update-event/${editEventId}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -180,7 +180,7 @@ function Cevents() {
 
   useEffect(() => {
     // Fetch events from the backend
-    fetch('http://localhost:3000/get-events')
+    fetch('/get-events')
       .then((response) => response.json())
       .then((data) => {
         setEvents(data);

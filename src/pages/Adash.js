@@ -19,7 +19,7 @@ const Dash = () => {
         console.error('Error fetching event count:', error);
       });
 
-    axios.get('/playerslist')
+    axios.get(`${ BASE_URL }/playerslist`)
       .then((response) => {
         setNumberOfPlayers(response.data.length);
       })
@@ -28,7 +28,7 @@ const Dash = () => {
       });
 
     axios
-    .get('/get-teams') // Assuming you have an endpoint to fetch teams
+    .get(`${ BASE_URL }/get-teams`) // Assuming you have an endpoint to fetch teams
     .then((response) => {
       setNumberOfTeams(response.data.length); // Count the unique teams
     })

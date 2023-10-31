@@ -3,7 +3,7 @@ import moment from 'moment';
 import practiseData from '../json/practise.json';
 import Header from '../components/Header';
 import Cside from '../components/SideBar';
-
+import {BASE_URL} from '../config';
 const Practise = () => {
   const [practiseEvents, setPractiseEvents] = useState([]);
 
@@ -14,7 +14,7 @@ const Practise = () => {
 
   const fetchPractiseEvents = async () => {
     try {
-      const response = await fetch('/get-practise-events');
+      const response = await fetch(`${ BASE_URL }/get-practise-events`);
       if (response.ok) {
         const data = await response.json();
         setPractiseEvents(data);

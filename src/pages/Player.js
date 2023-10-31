@@ -5,7 +5,6 @@ import Page from '../components/Page';
 import Sidebar from '../components/SideBar';
 import Header from '../components/Header';
 import teamsData from '../json/team.json';
-
 function Players() {
   const [selectedPlayer, setSelectedPlayer] = useState(null);
   const [players, setPlayers] = useState([]);

@@ -2,7 +2,7 @@ import React from 'react';
 import Sidebar from '../components/SideBar';
 import Header from '../components/Header';
 import { useState ,useEffect} from 'react';
-
+import {BASE_URL} from '../config';
 function Profile() {
   const [user, setUser] = useState(null);
 
@@ -10,7 +10,7 @@ function Profile() {
     // Fetch user details from the server using the JWT token
     const token = localStorage.getItem('token');
     if (token) {
-      fetch('/getprofile', {
+      fetch(`${ BASE_URL }/getprofile`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -35,7 +35,7 @@ function Profile() {
     const playerId = user ? user.id : null; // Use the player's ID from user data
     if (playerId) {
       // Fetch registered events for the player
-      fetch(`/get-registered-events/${playerId}`)
+      fetch(`${ BASE_URL }/get-registered-events/${playerId}`)
         .then((response) => response.json())
         .then((data) => {
           setRegisteredEvents(data);

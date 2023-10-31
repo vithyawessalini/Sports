@@ -4,7 +4,7 @@ import Sidebar from '../components/SideBar';
 import Header from '../components/Header';
 import EventRegistrationForm from '../components/EventRegistrationForm'; // Import the registration form
 import Eventlist from '../components/Reventlist';
-
+import {BASE_URL} from '../config';
 function formatDate(dateString) {
   const date = new Date(dateString);
   const day = date.getDate().toString().padStart(2, '0');
@@ -35,7 +35,7 @@ function Event() {
 
   useEffect(() => {
     // Fetch events from the backend
-    fetch('/get-events')
+    fetch(`${ BASE_URL }/get-events`)
       .then((response) => response.json())
       .then((data) => {
         setEvents(data);

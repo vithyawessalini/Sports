@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Fside from '../components/Fside';
 import Fhead from '../components/Fhead';
-
+import {BASE_URL} from '../config';
 function Fteams() {
   const [playersByTeams, setPlayersByTeams] = useState([]);
   const [selectedTeam, setSelectedTeam] = useState(null);
@@ -9,7 +9,7 @@ function Fteams() {
 
   useEffect(() => {
     // Fetch players grouped by teams and sports from the server
-    fetch('/get-players-by-teams')
+    fetch(`${ BASE_URL }/get-players-by-teams`)
       .then((response) => response.json())
       .then((data) => setPlayersByTeams(data))
       .catch((error) => console.error(error));

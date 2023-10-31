@@ -7,6 +7,7 @@ import { faPlus, faEdit } from '@fortawesome/free-solid-svg-icons';
 import EventList from '../components/Reventlist'; // Import the EventList component
 import EventRegistrationForm from '../components/EventRegistrationForm'; 
 import Swal from 'sweetalert2';
+import {BASE_URL} from '../config';
 function Cevents() {
   const [events, setEvents] = useState([]);
   const [showForm, setShowForm] = useState(false);
@@ -60,7 +61,7 @@ function Cevents() {
     
 
     // Make a POST request to add the event to the database
-    fetch('/add-event', {
+    fetch(`${ BASE_URL }/add-event`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -119,7 +120,7 @@ function Cevents() {
     };
 
     // Make a PUT request to update the event on the server
-    fetch(`http://localhost:3000/update-event/${editEventId}`, {
+    fetch(`${ BASE_URL }/update-event/${editEventId}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -196,7 +197,7 @@ function Cevents() {
 
   useEffect(() => {
     // Fetch events from the backend
-    fetch('http://localhost:3000/get-events')
+    fetch(`${ BASE_URL }/get-events`)
       .then((response) => response.json())
       .then((data) => {
         setEvents(data);

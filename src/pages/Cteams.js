@@ -3,7 +3,7 @@ import Header from '../components/Header';
 import Cside from '../components/Cside';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEdit } from '@fortawesome/free-solid-svg-icons';
-
+import {BASE_URL} from '../config';
 function Cteams() {
   const [selectedTeam, setSelectedTeam] = useState(null);
   const [newTeamId, setNewTeamId] = useState('');
@@ -22,7 +22,7 @@ function Cteams() {
 
   useEffect(() => {
     // Fetch players grouped by teams and sports from the server
-    fetch('/get-players-by-teams')
+    fetch(`${ BASE_URL }/get-players-by-teams`)
       .then((response) => response.json())
       .then((data) => {
         // Ensure that data is fetched and setTeamsData is called

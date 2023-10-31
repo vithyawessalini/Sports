@@ -3,7 +3,7 @@ import Page from '../components/Page';
 import Sidebar from '../components/SideBar';
 import Header from '../components/Header';
 import axios from 'axios';
-
+import {BASE_URL} from '../config';
 const Dash = () => {
   const [numberOfEvents, setNumberOfEvents] = useState(0);
   const [numberOfPlayers, setNumberOfPlayers] = useState(0);
@@ -11,7 +11,7 @@ const Dash = () => {
 
   useEffect(() => {
     // Make API requests to get counts
-    axios.get('/get-events')
+    axios.get(`${ BASE_URL }/get-events`)
       .then((response) => {
         setNumberOfEvents(response.data.length);
       })
@@ -19,7 +19,7 @@ const Dash = () => {
         console.error('Error fetching event count:', error);
       });
 
-    axios.get('/playerslist')
+    axios.get(`${ BASE_URL }/playerslist`)
       .then((response) => {
         setNumberOfPlayers(response.data.length);
       })
@@ -28,7 +28,7 @@ const Dash = () => {
       });
 
     axios
-    .get('/get-teams') // Assuming you have an endpoint to fetch teams
+    .get(`${ BASE_URL }/get-teams`) // Assuming you have an endpoint to fetch teams
     .then((response) => {
       setNumberOfTeams(response.data.length); // Count the unique teams
     })

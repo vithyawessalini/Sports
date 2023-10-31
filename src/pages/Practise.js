@@ -5,6 +5,7 @@ import React, { useState, useEffect } from 'react';
   import Header from '../components/Header';
   import Cside from '../components/Cside';
 import Swal from 'sweetalert2';
+import {BASE_URL} from '../config';
 const Practise = () => {
   const [practiseEvents, setPractiseEvents] = useState([]);
   const [newPractiseEvent, setNewPractiseEvent] = useState({
@@ -24,7 +25,7 @@ const Practise = () => {
 
   const fetchPractiseEvents = async () => {
     try {
-      const response = await fetch('/get-practise-events');
+      const response = await fetch(`${ BASE_URL }/get-practise-events`);
       if (response.ok) {
         const data = await response.json();
         setPractiseEvents(data);
@@ -61,7 +62,7 @@ const Practise = () => {
         end: moment(newPractiseEvent.date + ' ' + newPractiseEvent.endTime).toDate(),
       };
   
-      const response = await fetch('/add-practice-event', {
+      const response = await fetch(`${ BASE_URL }/add-practice-event`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -114,7 +115,7 @@ const Practise = () => {
     }
 
     try {
-      const response = await fetch(`/cancel-practice-event/${selectedPractise._id}`, {
+      const response = await fetch(`${ BASE_URL }/cancel-practice-event/${selectedPractise._id}`, {
         method: 'DELETE',
       });
 

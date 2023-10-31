@@ -17,7 +17,7 @@ const PracticeCalendar = () => {
       .then((response) => response.json())
       .then((practiceEvents) => {
         // Fetch regular events from the server
-        fetch('/get-events')
+        fetch(`${ BASE_URL }/get-events`)
           .then((response) => response.json())
           .then((regularEvents) => {
             // Add a 'category' property to distinguish practice and regular events

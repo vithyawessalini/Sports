@@ -1,3 +1,3 @@
 
-export const BASE_URL='https://sports-management-system-ce1r.onrender.com'
+export const BASE_URL='https://qw-l825.onrender.com'
 
